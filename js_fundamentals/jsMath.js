@@ -1,7 +1,7 @@
 
 //Math 1
 function zero_negativity(arr){
-	for(i=0;i<arr.length;i++){
+	for(let i=0;i<arr.length;i++){
 		if arr[i] < 0{
 			return false;
 		}
@@ -20,7 +20,7 @@ function is_even(num){
 //Math 3
 function how_many_even(arr){
 	var count = 0;
-	for(i=0;i < arr.length; i++){
+	for(let i=0;i < arr.length; i++){
 		if(is_even(arr[i])){
 			count++;
 		}
@@ -31,7 +31,7 @@ function how_many_even(arr){
 //Math 4
 function create_dummy_array(n){
 	var newArr = [];
-	for(i=0;i<n;i++){
+	for(let i=0;i<n;i++){
 		newArr.push(Math.floor(Math.random() * 10));
 	}
 	return newArr;
