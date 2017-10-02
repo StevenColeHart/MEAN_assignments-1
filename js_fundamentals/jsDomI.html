@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JavaScript Dom I</title>
+</head>
+<body>
+	<h1>Students</h1>
+	<ul id="main">
+	</ul>
+	<script>
+		function superAppend(array, elem, id) {
+			for(i=0;i<array.length;i++){
+				let added = document.createElement(elem);
+				added.innerHTML= array[i];
+				document.getElementById(id).appendChild(added);
+			}
+		}
+		let students = ["Jeff", "Jenny", "Javier", "Joslyn", "Joe", "Jane", "Django"];
+		let target_id = "main";
+		superAppend(students, "li" ,target_id);
+	</script>
+</body>
+</html>
