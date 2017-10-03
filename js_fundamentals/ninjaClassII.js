@@ -21,8 +21,13 @@ function Ninja(name, health=100){
 	}
 
 	this.kick = function(opponent){
-		opponent.health -= this.strength * 15;
-		console.log(opponent.name + " was kicked by " + this.name + " and lost " + (this.strength * 15) + " health!");
+		if(typeof(opponent) != 'Ninja'){
+			console.log(opponent + " is not a Ninja");
+		}
+		else{
+			opponent.health -= strength * 15;
+			console.log(opponent.name + " was kicked by " + this.name + " and lost " + (strength * 15) + " health!");
+		}
 	}
 }
 
@@ -31,3 +36,5 @@ var blueNinja = new Ninja("Doug Slug");
 
 redNinja.punch(blueNinja);
 blueNinja.kick(redNinja);
+redNinja.kick("foo");
+console.log(redNinja.constructor);
