@@ -24,7 +24,7 @@ let users = {
        {'first_name' : 'Lillian', 'last_name' : 'Chambers'},
        {'first_name' : 'Gordon', 'last_name' : 'Poe'}
     ]
- };
+ }
 
 //why does dot.notation not work here? Why is [indexing] necessary to get into the value associated with the key?
 for (let group in users){
