@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Survey Form</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div id="main">
+		<form id="survey" action="result" method="post">
+			<label for="name">Name:</label>
+			<input type="text" name="name">
+			<label for="loc">Dojo Location:</label>
+			<select name="loc">
+				<option value="Washington, D.C.">Washington, DC</option>
+				<option value="Burbank">Burbank</option>
+				<option value="Seattle">Seattle</option>
+			</select>
+			<label for="lang">Favorite Language:</label>
+			<select name="lang">
+				<option value="JavaScript">JavaScript</option>
+				<option value="Python">Python</option>
+				<option value="Java">Java</option>
+				<option value="Fortran">Fortran</option>
+			</select>
+			<label for="comment">Comment (optional):</label>
+			<textarea name="comment"></textarea>
+
+			<input type="submit" name="SUBMIT">
+		</form>
+	</div>
+</body>
+</html>
