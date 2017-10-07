@@ -1,0 +1,888 @@
+db
+
+
+
+
+
+
+
+
+Player2@LAPTOP-NUDHG8FH MINGW64 /c/Program Files/MongoDB/Server/3.4/bin
+$ ./mongo
+MongoDB shell version v3.4.9
+connecting to: mongodb://127.0.0.1:27017
+MongoDB server version: 3.4.9
+show dbs
+admin        0.000GB
+local        0.000GB
+my_first_db  0.000GB
+test         0.000GB
+use my_first_db
+switched to db my_first_db
+db.find({})
+2017-10-07T16:17:28.179-0400 E QUERY    [thread1] TypeError: db.find is not a function :
+@(shell):1:1
+db.students.find({})
+{ "_id" : ObjectId("59d93570895a6b570848b4ea"), "name" : "Bob Slob", "home_state" : "New York", "lucky_number" : 7, "birthday" : { "month" : "October", "year" : 1942 } }
+db.students.insert({name: "Doug Slug", home_state: "Ohio", lucky_number: 8, birthday: {month: "November", year: 1954}})
+WriteResult({ "nInserted" : 1 })
+db.students.insert({name: "Frank Stank", home_state: "California", lucky_number: 8, birthday: {month: "March", year: 1984}})
+WriteResult({ "nInserted" : 1 })
+db.students.insert({name: "Hank Dank", home_state: "Washington", lucky_number: 9, birthday: {month: "April", year: 1977}})
+WriteResult({ "nInserted" : 1 })
+db.students.insert({name: "Gary Dairy", home_state: "California", lucky_number: 10, birthday: {month: "May
+2017-10-07T16:21:32.977-0400 E QUERY    [thread1] SyntaxError: unterminated string literal @(shell):1:102
+db.students.insert({name: "Gary Dairy", home_state: "California", lucky_number: 10, birthday: {month: "May", year: 2049}})
+
+
+Player2@LAPTOP-NUDHG8FH MINGW64 /c/Program Files/MongoDB/Server/3.4/bin
+$ mongo --shell
+bash: mongo: command not found
+
+Player2@LAPTOP-NUDHG8FH MINGW64 /c/Program Files/MongoDB/Server/3.4/bin
+$ ./mongo --shell
+MongoDB shell version v3.4.9
+connecting to: mongodb://127.0.0.1:27017
+MongoDB server version: 3.4.9
+type "help" for help
+show dbs
+admin        0.000GB
+local        0.000GB
+my_first_db  0.000GB
+test         0.000GB
+use my_first_db
+switched to db my_first_db
+show collections
+students
+show students
+2017-10-07T16:24:53.520-0400 E QUERY    [thread1] Error: don't know how to show [students] :
+shellHelper.show@src/mongo/shell/utils.js:906:11
+shellHelper@src/mongo/shell/utils.js:659:15
+@(shellhelp2):1:1
+db.students.find().pretty()
+{
+        "_id" : ObjectId("59d93570895a6b570848b4ea"),
+        "name" : "Bob Slob",
+        "home_state" : "New York",
+        "lucky_number" : 7,
+        "birthday" : {
+                "month" : "October",
+                "year" : 1942
+        }
+}
+{
+        "_id" : ObjectId("59d93698d89dba3ecbe115c8"),
+        "name" : "Doug Slug",
+        "home_state" : "Ohio",
+        "lucky_number" : 8,
+        "birthday" : {
+                "month" : "November",
+                "year" : 1954
+        }
+}
+{
+        "_id" : ObjectId("59d936dbd89dba3ecbe115c9"),
+        "name" : "Frank Stank",
+        "home_state" : "California",
+        "lucky_number" : 8,
+        "birthday" : {
+                "month" : "March",
+                "year" : 1984
+        }
+}
+{
+        "_id" : ObjectId("59d9371bd89dba3ecbe115ca"),
+        "name" : "Hank Dank",
+        "home_state" : "Washington",
+        "lucky_number" : 9,
+        "birthday" : {
+                "month" : "April",
+                "year" : 1977
+        }
+}
+db.insert{
+show collections
+
+
+
+
+mongostat
+2017-10-07T16:26:33.188-0400 E QUERY    [thread1] ReferenceError: mongostat is not defined :
+@(shell):1:1
+show collections
+students
+show
+2017-10-07T16:26:47.316-0400 E QUERY    [thread1] Error: don't know how to show [] :
+shellHelper.show@src/mongo/shell/utils.js:906:11
+shellHelper@src/mongo/shell/utils.js:659:15
+@(shellhelp2):1:1
+db.
+show
+my_first_db.show
+show collections
+students
+students.find()
+2017-10-07T16:27:22.283-0400 E QUERY    [thread1] ReferenceError: students is not defined :
+@(shell):1:1
+db.students.find()
+{ "_id" : ObjectId("59d93570895a6b570848b4ea"), "name" : "Bob Slob", "home_state" : "New York", "lucky_number" : 7, "birthday" : { "month" : "October", "year" : 1942 } }
+{ "_id" : ObjectId("59d93698d89dba3ecbe115c8"), "name" : "Doug Slug", "home_state" : "Ohio", "lucky_number" : 8, "birthday" : { "month" : "November", "year" : 1954 } }
+{ "_id" : ObjectId("59d936dbd89dba3ecbe115c9"), "name" : "Frank Stank", "home_state" : "California", "lucky_number" : 8, "birthday" : { "month" : "March", "year" : 1984 } }
+{ "_id" : ObjectId("59d9371bd89dba3ecbe115ca"), "name" : "Hank Dank", "home_state" : "Washington", "lucky_number" : 9, "birthday" : { "month" : "April", "year" : 1977 } }
+db.students.find().pretty()
+{
+        "_id" : ObjectId("59d93570895a6b570848b4ea"),
+        "name" : "Bob Slob",
+        "home_state" : "New York",
+        "lucky_number" : 7,
+        "birthday" : {
+                "month" : "October",
+                "year" : 1942
+        }
+}
+{
+        "_id" : ObjectId("59d93698d89dba3ecbe115c8"),
+        "name" : "Doug Slug",
+        "home_state" : "Ohio",
+        "lucky_number" : 8,
+        "birthday" : {
+                "month" : "November",
+                "year" : 1954
+        }
+}
+{
+        "_id" : ObjectId("59d936dbd89dba3ecbe115c9"),
+        "name" : "Frank Stank",
+        "home_state" : "California",
+        "lucky_number" : 8,
+        "birthday" : {
+                "month" : "March",
+                "year" : 1984
+        }
+}
+{
+        "_id" : ObjectId("59d9371bd89dba3ecbe115ca"),
+        "name" : "Hank Dank",
+        "home_state" : "Washington",
+        "lucky_number" : 9,
+        "birthday" : {
+                "month" : "April",
+                "year" : 1977
+        }
+}
+db.students.insert({name: "Gary Dairy", home_state: "California", lucky_number: 10, birthday: {month: "May", year: 2049}})
+WriteResult({ "nInserted" : 1 })
+db.students.find().pretty()
+{
+        "_id" : ObjectId("59d93570895a6b570848b4ea"),
+        "name" : "Bob Slob",
+        "home_state" : "New York",
+        "lucky_number" : 7,
+        "birthday" : {
+                "month" : "October",
+                "year" : 1942
+        }
+}
+{
+        "_id" : ObjectId("59d93698d89dba3ecbe115c8"),
+        "name" : "Doug Slug",
+        "home_state" : "Ohio",
+        "lucky_number" : 8,
+        "birthday" : {
+                "month" : "November",
+                "year" : 1954
+        }
+}
+{
+        "_id" : ObjectId("59d936dbd89dba3ecbe115c9"),
+        "name" : "Frank Stank",
+        "home_state" : "California",
+        "lucky_number" : 8,
+        "birthday" : {
+                "month" : "March",
+                "year" : 1984
+        }
+}
+{
+        "_id" : ObjectId("59d9371bd89dba3ecbe115ca"),
+        "name" : "Hank Dank",
+        "home_state" : "Washington",
+        "lucky_number" : 9,
+        "birthday" : {
+                "month" : "April",
+                "year" : 1977
+        }
+}
+{
+        "_id" : ObjectId("59d939b6d43060f26180699d"),
+        "name" : "Gary Dairy",
+        "home_state" : "California",
+        "lucky_number" : 10,
+        "birthday" : {
+                "month" : "May",
+                "year" : 2049
+        }
+}
+db.students.find({home_state: "California"})
+{ "_id" : ObjectId("59d936dbd89dba3ecbe115c9"), "name" : "Frank Stank", "home_state" : "California", "lucky_number" : 8, "birthday" : { "month" : "March", "year" : 1984 } }
+{ "_id" : ObjectId("59d939b6d43060f26180699d"), "name" : "Gary Dairy", "home_state" : "California", "lucky_number" : 10, "birthday" : { "month" : "May", "year" : 2049 } }
+db.students.find(home_state: "California").pretty()
+2017-10-07T16:33:22.337-0400 E QUERY    [thread1] SyntaxError: missing ) after argument list @(shell):1:27
+db.students.find({home_state: "California"}).pretty()
+{
+        "_id" : ObjectId("59d936dbd89dba3ecbe115c9"),
+        "name" : "Frank Stank",
+        "home_state" : "California",
+        "lucky_number" : 8,
+        "birthday" : {
+                "month" : "March",
+                "year" : 1984
+        }
+}
+{
+        "_id" : ObjectId("59d939b6d43060f26180699d"),
+        "name" : "Gary Dairy",
+        "home_state" : "California",
+        "lucky_number" : 10,
+        "birthday" : {
+                "month" : "May",
+                "year" : 2049
+        }
+}
+db.students.find({lucky_number: {$gt 3}).pretty()
+
+mongostat
+
+
+
+
+}
+2017-10-07T16:36:36.387-0400 E QUERY    [thread1] SyntaxError: expected expression, got '}' @(shell):1:0
+db.students.find({lucky_number: {$gt: 3}}).pretty()
+{
+        "_id" : ObjectId("59d93570895a6b570848b4ea"),
+        "name" : "Bob Slob",
+        "home_state" : "New York",
+        "lucky_number" : 7,
+        "birthday" : {
+                "month" : "October",
+                "year" : 1942
+        }
+}
+{
+        "_id" : ObjectId("59d93698d89dba3ecbe115c8"),
+        "name" : "Doug Slug",
+        "home_state" : "Ohio",
+        "lucky_number" : 8,
+        "birthday" : {
+                "month" : "November",
+                "year" : 1954
+        }
+}
+{
+        "_id" : ObjectId("59d936dbd89dba3ecbe115c9"),
+        "name" : "Frank Stank",
+        "home_state" : "California",
+        "lucky_number" : 8,
+        "birthday" : {
+                "month" : "March",
+                "year" : 1984
+        }
+}
+{
+        "_id" : ObjectId("59d9371bd89dba3ecbe115ca"),
+        "name" : "Hank Dank",
+        "home_state" : "Washington",
+        "lucky_number" : 9,
+        "birthday" : {
+                "month" : "April",
+                "year" : 1977
+        }
+}
+{
+        "_id" : ObjectId("59d939b6d43060f26180699d"),
+        "name" : "Gary Dairy",
+        "home_state" : "California",
+        "lucky_number" : 10,
+        "birthday" : {
+                "month" : "May",
+                "year" : 2049
+        }
+}
+db.students.find({lucky_number: {$lte: 10}}).pretty()
+{
+        "_id" : ObjectId("59d93570895a6b570848b4ea"),
+        "name" : "Bob Slob",
+        "home_state" : "New York",
+        "lucky_number" : 7,
+        "birthday" : {
+                "month" : "October",
+                "year" : 1942
+        }
+}
+{
+        "_id" : ObjectId("59d93698d89dba3ecbe115c8"),
+        "name" : "Doug Slug",
+        "home_state" : "Ohio",
+        "lucky_number" : 8,
+        "birthday" : {
+                "month" : "November",
+                "year" : 1954
+        }
+}
+{
+        "_id" : ObjectId("59d936dbd89dba3ecbe115c9"),
+        "name" : "Frank Stank",
+        "home_state" : "California",
+        "lucky_number" : 8,
+        "birthday" : {
+                "month" : "March",
+                "year" : 1984
+        }
+}
+{
+        "_id" : ObjectId("59d9371bd89dba3ecbe115ca"),
+        "name" : "Hank Dank",
+        "home_state" : "Washington",
+        "lucky_number" : 9,
+        "birthday" : {
+                "month" : "April",
+                "year" : 1977
+        }
+}
+{
+        "_id" : ObjectId("59d939b6d43060f26180699d"),
+        "name" : "Gary Dairy",
+        "home_state" : "California",
+        "lucky_number" : 10,
+        "birthday" : {
+                "month" : "May",
+                "year" : 2049
+        }
+}
+db.students.find({lucky_number: {$gte: 7, $lte: 8}}).pretty()
+{
+        "_id" : ObjectId("59d93570895a6b570848b4ea"),
+        "name" : "Bob Slob",
+        "home_state" : "New York",
+        "lucky_number" : 7,
+        "birthday" : {
+                "month" : "October",
+                "year" : 1942
+        }
+}
+{
+        "_id" : ObjectId("59d93698d89dba3ecbe115c8"),
+        "name" : "Doug Slug",
+        "home_state" : "Ohio",
+        "lucky_number" : 8,
+        "birthday" : {
+                "month" : "November",
+                "year" : 1954
+        }
+}
+{
+        "_id" : ObjectId("59d936dbd89dba3ecbe115c9"),
+        "name" : "Frank Stank",
+        "home_state" : "California",
+        "lucky_number" : 8,
+        "birthday" : {
+                "month" : "March",
+                "year" : 1984
+        }
+}
+db.students.update({}, {$set: {interests: []})
+db.find({name: "Doug Slug"}).pretty()
+}
+2017-10-07T17:00:21.024-0400 E QUERY    [thread1] SyntaxError: missing } after property list @(shell):1:45
+db.students.find({name: "Doug Slug"}).pretty()
+{
+        "_id" : ObjectId("59d93698d89dba3ecbe115c8"),
+        "name" : "Doug Slug",
+        "home_state" : "Ohio",
+        "lucky_number" : 8,
+        "birthday" : {
+                "month" : "November",
+                "year" : 1954
+        }
+}
+db.students.update({name: "Doug Slug"}, {$set: {interests: []}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+db.students.update({name: "Doug Slug}, {$unset: {interests: ""}})
+2017-10-07T17:12:48.585-0400 E QUERY    [thread1] SyntaxError: unterminated string literal @(shell):1:61
+db.students.update({name: "Doug Slug"}, {$unset: {interests: ""}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+db.students.find({name: "Doug Slug"})
+{ "_id" : ObjectId("59d93698d89dba3ecbe115c8"), "name" : "Doug Slug", "home_state" : "Ohio", "lucky_number" : 8, "birthday" : { "month" : "November", "year" : 1954 } }
+db.students.update({}, {$set: {interests: []}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+db.students.find().pretty()
+{
+        "_id" : ObjectId("59d93570895a6b570848b4ea"),
+        "name" : "Bob Slob",
+        "home_state" : "New York",
+        "lucky_number" : 7,
+        "birthday" : {
+                "month" : "October",
+                "year" : 1942
+        },
+        "interests" : [ ]
+}
+{
+        "_id" : ObjectId("59d93698d89dba3ecbe115c8"),
+        "name" : "Doug Slug",
+        "home_state" : "Ohio",
+        "lucky_number" : 8,
+        "birthday" : {
+                "month" : "November",
+                "year" : 1954
+        }
+}
+{
+        "_id" : ObjectId("59d936dbd89dba3ecbe115c9"),
+        "name" : "Frank Stank",
+        "home_state" : "California",
+        "lucky_number" : 8,
+        "birthday" : {
+                "month" : "March",
+                "year" : 1984
+        }
+}
+{
+        "_id" : ObjectId("59d9371bd89dba3ecbe115ca"),
+        "name" : "Hank Dank",
+        "home_state" : "Washington",
+        "lucky_number" : 9,
+        "birthday" : {
+                "month" : "April",
+                "year" : 1977
+        }
+}
+{
+        "_id" : ObjectId("59d939b6d43060f26180699d"),
+        "name" : "Gary Dairy",
+        "home_state" : "California",
+        "lucky_number" : 10,
+        "birthday" : {
+                "month" : "May",
+                "year" : 2049
+        }
+}
+db.students.update({name: "Bob Slob"}, {$unset: {interests: ""}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+db.students.find({name: "Bob Slob"})
+{ "_id" : ObjectId("59d93570895a6b570848b4ea"), "name" : "Bob Slob", "home_state" : "New York", "lucky_number" : 7, "birthday" : { "month" : "October", "year" : 1942 } }
+db.students.updateMany({}, {$set: {interests: []}})
+{ "acknowledged" : true, "matchedCount" : 5, "modifiedCount" : 5 }
+db.students.find().pretty()
+{
+        "_id" : ObjectId("59d93570895a6b570848b4ea"),
+        "name" : "Bob Slob",
+        "home_state" : "New York",
+        "lucky_number" : 7,
+        "birthday" : {
+                "month" : "October",
+                "year" : 1942
+        },
+        "interests" : [ ]
+}
+{
+        "_id" : ObjectId("59d93698d89dba3ecbe115c8"),
+        "name" : "Doug Slug",
+        "home_state" : "Ohio",
+        "lucky_number" : 8,
+        "birthday" : {
+                "month" : "November",
+                "year" : 1954
+        },
+        "interests" : [ ]
+}
+{
+        "_id" : ObjectId("59d936dbd89dba3ecbe115c9"),
+        "name" : "Frank Stank",
+        "home_state" : "California",
+        "lucky_number" : 8,
+        "birthday" : {
+                "month" : "March",
+                "year" : 1984
+        },
+        "interests" : [ ]
+}
+{
+        "_id" : ObjectId("59d9371bd89dba3ecbe115ca"),
+        "name" : "Hank Dank",
+        "home_state" : "Washington",
+        "lucky_number" : 9,
+        "birthday" : {
+                "month" : "April",
+                "year" : 1977
+        },
+        "interests" : [ ]
+}
+{
+        "_id" : ObjectId("59d939b6d43060f26180699d"),
+        "name" : "Gary Dairy",
+        "home_state" : "California",
+        "lucky_number" : 10,
+        "birthday" : {
+                "month" : "May",
+                "year" : 2049
+        },
+        "interests" : [ ]
+}
+db.students.updateMany({}, {$set: {interests: ['coding', 'brunch', 'MongoDB']}})
+{ "acknowledged" : true, "matchedCount" : 5, "modifiedCount" : 5 }
+db.students.find().pretty()
+{
+        "_id" : ObjectId("59d93570895a6b570848b4ea"),
+        "name" : "Bob Slob",
+        "home_state" : "New York",
+        "lucky_number" : 7,
+        "birthday" : {
+                "month" : "October",
+                "year" : 1942
+        },
+        "interests" : [
+                "coding",
+                "brunch",
+                "MongoDB"
+        ]
+}
+{
+        "_id" : ObjectId("59d93698d89dba3ecbe115c8"),
+        "name" : "Doug Slug",
+        "home_state" : "Ohio",
+        "lucky_number" : 8,
+        "birthday" : {
+                "month" : "November",
+                "year" : 1954
+        },
+        "interests" : [
+                "coding",
+                "brunch",
+                "MongoDB"
+        ]
+}
+{
+        "_id" : ObjectId("59d936dbd89dba3ecbe115c9"),
+        "name" : "Frank Stank",
+        "home_state" : "California",
+        "lucky_number" : 8,
+        "birthday" : {
+                "month" : "March",
+                "year" : 1984
+        },
+        "interests" : [
+                "coding",
+                "brunch",
+                "MongoDB"
+        ]
+}
+{
+        "_id" : ObjectId("59d9371bd89dba3ecbe115ca"),
+        "name" : "Hank Dank",
+        "home_state" : "Washington",
+        "lucky_number" : 9,
+        "birthday" : {
+                "month" : "April",
+                "year" : 1977
+        },
+        "interests" : [
+                "coding",
+                "brunch",
+                "MongoDB"
+        ]
+}
+{
+        "_id" : ObjectId("59d939b6d43060f26180699d"),
+        "name" : "Gary Dairy",
+        "home_state" : "California",
+        "lucky_number" : 10,
+        "birthday" : {
+                "month" : "May",
+                "year" : 2049
+        },
+        "interests" : [
+                "coding",
+                "brunch",
+                "MongoDB"
+        ]
+}
+db.students.update({name: "Bob Slob"}, {$push: {interests: 'dirty dishes'}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+db.students.update({name: "Doug Slug"}, {$push: {interests: 'slime'}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+db.students.update({name: "Hank Dank"}, {$push: {interests: 'dankness'}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+db.students.update({name: "Frank Stank"}, {$push: {interests: 'stankness'}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+db.students.update({name: "Gary Dairy"}, {$push: {interests: 'cheese'}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+db.students.find().pretty()
+{
+        "_id" : ObjectId("59d93570895a6b570848b4ea"),
+        "name" : "Bob Slob",
+        "home_state" : "New York",
+        "lucky_number" : 7,
+        "birthday" : {
+                "month" : "October",
+                "year" : 1942
+        },
+        "interests" : [
+                "coding",
+                "brunch",
+                "MongoDB",
+                "dirty dishes"
+        ]
+}
+{
+        "_id" : ObjectId("59d93698d89dba3ecbe115c8"),
+        "name" : "Doug Slug",
+        "home_state" : "Ohio",
+        "lucky_number" : 8,
+        "birthday" : {
+                "month" : "November",
+                "year" : 1954
+        },
+        "interests" : [
+                "coding",
+                "brunch",
+                "MongoDB",
+                "slime"
+        ]
+}
+{
+        "_id" : ObjectId("59d936dbd89dba3ecbe115c9"),
+        "name" : "Frank Stank",
+        "home_state" : "California",
+        "lucky_number" : 8,
+        "birthday" : {
+                "month" : "March",
+                "year" : 1984
+        },
+        "interests" : [
+                "coding",
+                "brunch",
+                "MongoDB",
+                "stankness"
+        ]
+}
+{
+        "_id" : ObjectId("59d9371bd89dba3ecbe115ca"),
+        "name" : "Hank Dank",
+        "home_state" : "Washington",
+        "lucky_number" : 9,
+        "birthday" : {
+                "month" : "April",
+                "year" : 1977
+        },
+        "interests" : [
+                "coding",
+                "brunch",
+                "MongoDB",
+                "dankness"
+        ]
+}
+{
+        "_id" : ObjectId("59d939b6d43060f26180699d"),
+        "name" : "Gary Dairy",
+        "home_state" : "California",
+        "lucky_number" : 10,
+        "birthday" : {
+                "month" : "May",
+                "year" : 2049
+        },
+        "interests" : [
+                "coding",
+                "brunch",
+                "MongoDB",
+                "cheese"
+        ]
+}
+db.students.update({name: "Gary Dairy"}, {$push: {interests: 'taxes'}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+db.students.find({name: "Gary Dairy"}).pretty()
+{
+        "_id" : ObjectId("59d939b6d43060f26180699d"),
+        "name" : "Gary Dairy",
+        "home_state" : "California",
+        "lucky_number" : 10,
+        "birthday" : {
+                "month" : "May",
+                "year" : 2049
+        },
+        "interests" : [
+                "coding",
+                "brunch",
+                "MongoDB",
+                "cheese",
+                "taxes"
+        ]
+}
+db.students.update({name: "Gary Dairy"}, {$pop: {interests: -1}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+db.students.find({name: "Gary Dairy"}).pretty()
+{
+        "_id" : ObjectId("59d939b6d43060f26180699d"),
+        "name" : "Gary Dairy",
+        "home_state" : "California",
+        "lucky_number" : 10,
+        "birthday" : {
+                "month" : "May",
+                "year" : 2049
+        },
+        "interests" : [
+                "brunch",
+                "MongoDB",
+                "cheese",
+                "taxes"
+        ]
+}
+db.students.update({name: "Gary Dairy"}, {$pop: {interests: 1}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+db.students.find({name: "Gary Dairy"}).pretty()
+{
+        "_id" : ObjectId("59d939b6d43060f26180699d"),
+        "name" : "Gary Dairy",
+        "home_state" : "California",
+        "lucky_number" : 10,
+        "birthday" : {
+                "month" : "May",
+                "year" : 2049
+        },
+        "interests" : [
+                "brunch",
+                "MongoDB",
+                "cheese"
+        ]
+}
+db.students.remove({home_state: "California"})
+WriteResult({ "nRemoved" : 2 })
+db.students.remove({"name": "Hank Dank"})
+WriteResult({ "nRemoved" : 1 })
+db.students.remove({lucky_number: {$gt: 5}, true})
+2017-10-07T18:11:48.945-0400 E QUERY    [thread1] SyntaxError: true is a reserved identifier @(shell):1:44
+db.students.remove({lucky_number: {$gt: 9}}, true)
+WriteResult({ "nRemoved" : 0 })
+db.students.find().pretty()
+{
+        "_id" : ObjectId("59d93570895a6b570848b4ea"),
+        "name" : "Bob Slob",
+        "home_state" : "New York",
+        "lucky_number" : 7,
+        "birthday" : {
+                "month" : "October",
+                "year" : 1942
+        },
+        "interests" : [
+                "coding",
+                "brunch",
+                "MongoDB",
+                "dirty dishes"
+        ]
+}
+{
+        "_id" : ObjectId("59d93698d89dba3ecbe115c8"),
+        "name" : "Doug Slug",
+        "home_state" : "Ohio",
+        "lucky_number" : 8,
+        "birthday" : {
+                "month" : "November",
+                "year" : 1954
+        },
+        "interests" : [
+                "coding",
+                "brunch",
+                "MongoDB",
+                "slime"
+        ]
+}
+db.students.updateMany({}, {$set: {number_of_belts: 0}})
+{ "acknowledged" : true, "matchedCount" : 2, "modifiedCount" : 2 }
+db.students.update({home_state: "Ohio"}, {$inc: {number_of_belts: 1}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+db.students.updateMany({}, {$rename: {"number_of_belts": "belts_earned"}})
+{ "acknowledged" : true, "matchedCount" : 2, "modifiedCount" : 2 }
+db.students.find().pretty()
+{
+        "_id" : ObjectId("59d93570895a6b570848b4ea"),
+        "name" : "Bob Slob",
+        "home_state" : "New York",
+        "lucky_number" : 7,
+        "birthday" : {
+                "month" : "October",
+                "year" : 1942
+        },
+        "interests" : [
+                "coding",
+                "brunch",
+                "MongoDB",
+                "dirty dishes"
+        ],
+        "belts_earned" : 0
+}
+{
+        "_id" : ObjectId("59d93698d89dba3ecbe115c8"),
+        "name" : "Doug Slug",
+        "home_state" : "Ohio",
+        "lucky_number" : 8,
+        "birthday" : {
+                "month" : "November",
+                "year" : 1954
+        },
+        "interests" : [
+                "coding",
+                "brunch",
+                "MongoDB",
+                "slime"
+        ],
+        "belts_earned" : 1
+}
+db.students.updateMany({}, {$set: {updated_on: $currentDate}})
+2017-10-07T18:26:06.924-0400 E QUERY    [thread1] ReferenceError: $currentDate is not defined :
+@(shell):1:36
+db.students.updateMany({}, {$set: {$currentDate: updated_at}})
+2017-10-07T18:27:18.205-0400 E QUERY    [thread1] ReferenceError: updated_at is not defined :
+@(shell):1:36
+db.students.updateMany({}, {$currentDate: {updated_at: {$type: date}}})
+2017-10-07T18:29:09.535-0400 E QUERY    [thread1] ReferenceError: date is not defined :
+@(shell):1:57
+db.students.updateMany({}, {$currentDate: {"updated_at":{$type: "date"}}})
+{ "acknowledged" : true, "matchedCount" : 2, "modifiedCount" : 2 }
+db.students.find().pretty()
+{
+        "_id" : ObjectId("59d93570895a6b570848b4ea"),
+        "name" : "Bob Slob",
+        "home_state" : "New York",
+        "lucky_number" : 7,
+        "birthday" : {
+                "month" : "October",
+                "year" : 1942
+        },
+        "interests" : [
+                "coding",
+                "brunch",
+                "MongoDB",
+                "dirty dishes"
+        ],
+        "belts_earned" : 0,
+        "updated_at" : ISODate("2017-10-07T22:30:53.196Z")
+}
+{
+        "_id" : ObjectId("59d93698d89dba3ecbe115c8"),
+        "name" : "Doug Slug",
+        "home_state" : "Ohio",
+        "lucky_number" : 8,
+        "birthday" : {
+                "month" : "November",
+                "year" : 1954
+        },
+        "interests" : [
+                "coding",
+                "brunch",
+                "MongoDB",
+                "slime"
+        ],
+        "belts_earned" : 1,
+        "updated_at" : ISODate("2017-10-07T22:30:53.196Z")
+}
