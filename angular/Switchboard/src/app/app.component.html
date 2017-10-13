@@ -1,0 +1,8 @@
+<div id="main">
+<h1>{{title}}</h1>
+<div id="switchboard">
+  <div *ngFor='let number of [0,1,2,3,4,5,6,7,8,9]' (click)='clickSwitch(number)' class='switch {{switchboard[number]}}'>
+{{switchboard[number]}}</div>
+</div>
+</div>
+
