@@ -1,0 +1,94 @@
+<h1>{{title}}</h1>
+<div id="hidden" *ngIf="users.length >= 1">
+  <p> Thank you for registering with us {{users[users.length - 1].firstName}}! We sent a confirmation email to <a href="#">{{users[users.length - 1].email}}</a>, and we will send all mail to {{users[users.length - 1].address1}} {{users[users.length - 1].address2}}, {{users[users.length - 1].city}}, {{users[users.length - 1].state}}.</p>
+  <p>Have a wonderful day!</p>
+</div>
+<fieldset>
+  <legend>Account Information</legend>
+  <form (submit)="onSubmit()" #formData='ngForm'>
+    <label for="firstName">First Name:</label>
+    <input type="text" name="firstName"
+    required
+    minlength="2"
+    maxlength="24"
+    [(ngModel)]='user.firstName'
+    #firstName="ngModel">
+    <div class="error" *ngIf="firstName.errors"> {{firstName.errors | json}}</div>
+
+    <label for="lastName">Last Name:</label>
+    <input type="text" name="lastName"
+    required
+    minlength="2"
+    maxlength="24"
+    [(ngModel)]='user.lastName'
+    #lastName="ngModel">
+    <div class="error" *ngIf="lastName.errors"> {{lastName.errors | json}}</div>
+    
+    <label for="email">Email:</label>
+    <input type="text" name="email"
+    required
+    minlength="4"
+    maxlength="24"
+    pattern=""
+    [(ngModel)]='user.email'
+    #email='ngModel'>
+    <div class="error" *ngIf="email.errors"> {{email.errors | json}}</div>
+
+    <label for="password">Password: </label>
+    <input type='password' name='password'
+    required
+    minlength="4"
+    maxlength="24"
+    pattern="^([a-zA-Z0-9@*#]{8,15})$"
+    [(ngModel)]='user.password'
+    #password='ngModel'>
+     <div class="error" *ngIf="password.errors"> {{password.errors | json}}</div>
+
+    <label for="password_conf">Password confirmation: </label>
+    <input type='password' name="password_conf"
+    [(ngModel)]='user.password_conf'
+    required>
+    
+    <div *ngIf="user.password_conf != user.password">Password confirmation must match.</div>
+
+    <label for="address1">Street Address: </label>
+    <input type='text' name='address1'
+    [(ngModel)]='user.address1'
+    required
+    minlength="4"
+    maxlength="24"
+    #address1 = 'ngModel'>
+    <div class="error" *ngIf="address1.errors"> {{address1.errors | json}}</div>
+
+    <label for="address2"> Unit/Apt #</label>
+    <input type="text" name="address2"
+    [(ngModel)]='user.address2'
+    #address2 = 'ngModel'>
+
+    <label for="city">City: </label>
+    <input type="text" name="city"
+    required
+    [(ngModel)]='user.city'
+    #city = 'ngModel'>
+    <div class="error" *ngIf="city.errors"> {{city.errors | json}}</div>
+
+    <label for="state">State: </label>
+    <select name="state"
+    required
+    [(ngModel)]="user.state"
+    #state='ngModel'>
+      <option value="VA">Virginia</option>
+      <option value="NY">New York</option>
+      <option value="CA">California</option>
+    </select>
+    <div class="error" *ngIf="state.errors"> {{state.errors | json}}</div>
+
+    <label for="lucky">I'm feeling lucky:</label>
+    <input required type="radio" name="lucky" value="yes" [(ngModel)]='user.lucky' #lucky='ngModel'>Yes
+    <input required type="radio" name="lucky" value="no" [(ngModel)]='user.lucky' #lucky='ngModel'>No
+    <div class="error" *ngIf="lucky.errors"> {{lucky.errors | json}}</div>
+
+    <input type="submit" value="Submit" name="submit" [disabled]="formData.invalid">
+  </form>
+</fieldset>
+
