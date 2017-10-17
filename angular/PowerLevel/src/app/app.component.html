@@ -1,0 +1,23 @@
+<div id="outermost-wrapper">
+  <fieldset>
+    <legend>Power Levels</legend>
+    <div id="main-wrapper">
+      <form (submit)="onSubmit()" #formData='ngForm'>
+        <label for="lvl">Initial Power Level:</label>
+        <select name="lvl"  [(ngModel)]='power.lvl'>
+          <option *ngFor='let num of numArr()'>{{num}}</option>
+        </select>
+        <input type="submit" value="Completely Unnecessary Button">
+      </form>
+      <p *ngIf="submitted">Power Level: {{power.lvl}}</p>
+      <div id="powers">
+        <app-human [power]="power.lvl" [txt]="powerTxt(power.lvl)" [type]="types[0]"></app-human>
+        <app-saiyan [power]="power.lvl * 10" [txt]="powerTxt(power.lvl * 10)" [type]="types[1]"></app-saiyan>
+        <app-super-saiyan [power]="power.lvl * 90" [txt]="powerTxt(power.lvl * 90)" [type]="types[2]"></app-super-saiyan>
+        <app-super-saiyan-two [power]="power.lvl * 150" [txt]="powerTxt(power.lvl * 150)" [type]="types[3]"></app-super-saiyan-two>
+        <app-super-saiyan-three [power]="power.lvl * 250" [txt]="powerTxt(power.lvl * 250)" [type]="types[4]"></app-super-saiyan-three>
+        <app-super-saiyan-four [power]="power.lvl * 500" [txt]="powerTxt(power.lvl * 500)" [type]="types[5]"></app-super-saiyan-four>
+      </div>
+    </div>
+  </fieldset>
+</div>
