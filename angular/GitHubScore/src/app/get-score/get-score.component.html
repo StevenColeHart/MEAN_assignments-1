@@ -1,0 +1,22 @@
+<div id="main">
+  <div id="get-user">
+    <h1>GitHub Score</h1>
+    <form (submit)="onSubmit()" #formData='ngForm'>
+      <label for="username">GitHub User name:</label>
+      <input type="text" name="username"
+      required
+      [(ngModel)]="user.username"
+      #username="ngModel">
+      <input type="submit" name="submit" value="Calculate my GitHub Score" [disabled]="formData.invalid">
+    </form>
+  </div>
+  <div id="show-score">
+    <div id="user-exits" *ngIf="current_user != '' && score >= 0">
+      <h2>{{current_user}}'s Score: {{score}}</h2>
+      <p [ngStyle]="{color: commentary.color}">{{commentary.text}}</p>
+    </div>
+    <div id="no-user"*ngIf="score < 0">
+      <h2>User "{{current_user}}" does not exist.</h2>
+  </div>
+</div>
+</div>
