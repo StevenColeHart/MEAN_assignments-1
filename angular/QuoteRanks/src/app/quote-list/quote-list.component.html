@@ -1,0 +1,14 @@
+<div id="quotes">
+  <div class="one-quote"
+  *ngFor="let quote of quotes">
+  <p>Author: {{quote.author}}</p>
+  <p>Quote: {{quote.a_quote}}</p>
+  <p *ngIf="quote.score >= 1">+{{quote.score}}</p>
+  <p *ngIf="quote.score <= 0">{{quote.score}}</p>
+  <div class="buttons">
+    <button (click)="voteUp(quote)">Vote Up</button>
+    <button (click)="voteDown(quote)">Vote Down</button>
+    <button (click)="delete(quote)">Delete</button>
+  </div>
+  </div>
+</div>
