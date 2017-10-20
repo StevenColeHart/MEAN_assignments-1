@@ -1,0 +1,12 @@
+#city-list{
+    list-style-type: none;
+}
+
+.city-li{
+    float: left;
+}
+
+.city-li a{
+    text-align: center;
+    padding: 10px;
+}
