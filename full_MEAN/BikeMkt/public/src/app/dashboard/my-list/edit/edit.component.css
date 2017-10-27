@@ -1,0 +1,15 @@
+img{
+    width: 100px;
+    height: 100px;
+}
+
+.bike-box{
+    display: flex;
+    flex-direction: row;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}

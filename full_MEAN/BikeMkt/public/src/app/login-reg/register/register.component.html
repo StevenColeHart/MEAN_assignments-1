@@ -1,0 +1,51 @@
+<fieldset>
+  <legend>Registration</legend>
+  <form (submit)="onSubmit()" #formData='ngForm'>
+    <label for="first_name">First Name:</label>
+    <input type="text" name="first_name"
+    required
+    minlength="2"
+    maxlength="24"
+    [(ngModel)]='user.first_name'
+    #first_name="ngModel">
+    <div class="error" *ngIf="first_name.errors"> {{first_name.errors | json}}</div>
+
+    <label for="last_name">Last Name:</label>
+    <input type="text" name="last_name"
+    required
+    minlength="2"
+    maxlength="24"
+    [(ngModel)]='user.last_name'
+    #last_name="ngModel">
+    <div class="error" *ngIf="last_name.errors"> {{last_name.errors | json}}</div>
+    
+    <label for="email">Email:</label>
+    <input type="text" name="email"
+    required
+    minlength="4"
+    pattern=".+\@.+\..+"
+    [(ngModel)]='user.email'
+    #email='ngModel'>
+    <div class="error" *ngIf="email.errors"> {{email.errors | json}}</div>
+
+    <label for="password">Password: </label>
+    <input type='password' name='password'
+    required
+    minlength="4"
+    maxlength="24"
+    pattern="([a-zA-Z0-9@*#]{4,24})"
+    [(ngModel)]='user.password'
+    #password='ngModel'>
+     <div class="error" *ngIf="password.errors"> {{password.errors | json}}</div>
+
+    <label for="password_conf">Password confirmation: </label>
+    <input type='password' name="password_conf"
+    [(ngModel)]='user.password_conf'
+    required>
+    
+    <div *ngIf="user.password_conf != user.password">Password confirmation must match.</div>
+
+    <input type="submit" value="Submit" name="submit" [disabled]="formData.invalid">
+  </form>
+</fieldset>
+

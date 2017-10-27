@@ -1,0 +1,9 @@
+<h2>My Listings</h2>
+<h3>Create New Lisiting</h3>
+<app-create></app-create>
+<div *ngIf="usersBikes">
+    <h3>Edit/Delete Listings</h3>
+    <div id="bikes-list" *ngFor="let bike of usersBikes">
+        <app-edit [bike]='bike'></app-edit>
+    </div>
+</div>

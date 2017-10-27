@@ -1,0 +1,19 @@
+<fieldset>
+  <legend>Log In</legend>
+  <form (submit)="onSubmit()" #formData='ngForm'>
+
+      <label for="email">Email:</label>
+      <input type="text" name="email"
+      required
+      [(ngModel)]='user.email'
+      #email='ngModel'>
+
+      <label for="password">Password: </label>
+      <input type='password' name='password'
+      required
+      [(ngModel)]='user.password'
+      #password='ngModel'>
+
+      <input type="submit" value="Submit" name="submit" [disabled]="formData.invalid">
+  </form>
+</fieldset>

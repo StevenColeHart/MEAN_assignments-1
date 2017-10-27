@@ -1,0 +1,7 @@
+<h2>Display All Bikes Here</h2>
+<div *ngFor="let bike of bikes">
+  <div>
+    <p>title: {{bike.title}}</p>
+    <p>uploader: {{bike.user.first_name}}</p>
+  </div>
+</div>

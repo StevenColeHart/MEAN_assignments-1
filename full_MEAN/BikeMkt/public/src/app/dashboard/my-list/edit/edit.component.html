@@ -1,0 +1,39 @@
+<div *ngIf="bike._id">
+    <div class="bike-box">
+      <img src='{{bike.imgUrl}}' alt="image of {{bike.title}}">
+      <form (submit)="onSubmit()" #formData='ngForm'>
+        <label for="title">Title:</label>
+        <input type="text" name="title"
+        value="bike.title"
+        required
+        [(ngModel)]="bike.title"
+        #title="ngModel">
+        <label for="description">Description:</label>
+        <input type="text" name="description"
+        value="bike.description"
+        required
+        [(ngModel)]="bike.description"
+        #description="ngModel">
+        <label for="price">Price:</label>
+        <input type="text" name="price"
+        value="bike.price"
+        required
+        [(ngModel)]="bike.price"
+        #price="ngModel">
+        <label for="location">Location:</label>
+        <input type="text" name="location"
+        value="bike.location"
+        required
+        [(ngModel)]="bike.location"
+        #location="ngModel">
+        <label for="imgUrl">Image URL:</label>
+        <input type="text" name="imgUrl"
+        value="bike.imgUrl"
+        [(ngModel)]="bike.imgUrl"
+        #imgUrl="ngModel">
+        <input type="hidden" value="bike._id">
+        <input type="submit" name="submit" value="Update" [disabled]="formData.invalid">
+    </form>
+    <button (click)="deleteButton()">Delete</button>
+  </div>
+</div>

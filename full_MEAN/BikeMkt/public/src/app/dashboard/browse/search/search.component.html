@@ -1,0 +1,10 @@
+<h2>Search</h2>
+<form (submit)="onSubmit()" #formData='ngForm'>
+  <label for="search">Search for Bikes:</label>
+  <input type="text" name="search"
+  required
+  value="Search..."
+  [(ngModel)]="search.search"
+  #search="ngModel">
+  <input type="submit" name="submit" value="Search" [disabled]="formData.invalid">
+</form>

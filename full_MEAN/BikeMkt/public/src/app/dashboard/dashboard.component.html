@@ -1,0 +1,5 @@
+<a [routerLink]="['/dashboard','browse']">Browse</a>
+<a [routerLink]="['/dashboard','my-list']">My Listings</a>
+<a href="/logout">Logout</a>
+<p *ngIf="current_user">Welcome, {{current_user.first_name}}!</p>
+<router-outlet></router-outlet>

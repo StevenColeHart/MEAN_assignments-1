@@ -1,0 +1,35 @@
+<form (submit)="onSubmit()" #formData='ngForm'>
+
+  <label for="title">Title:</label>
+  <input type="text" name="title"
+  required
+  [(ngModel)]="bike.title"
+  #title="ngModel">
+
+  <label for="description">Description:</label>
+  <input type="text" name="description"
+  required
+  maxlength="200"
+  [(ngModel)]="bike.description"
+  #description="ngModel">
+
+  <label for="price">Price:</label>
+  <input type="text" name="price"
+  required
+  placeholder="1"
+  [(ngModel)]="bike.price"
+  #price="ngModel">
+
+  <label for="location">Location:</label>
+  <input type="text" name="location"
+  required
+  [(ngModel)]="bike.location"
+  #location="ngModel">
+
+  <label for="imgUrl">Image URL:</label>
+  <input type="text" name="imgUrl"
+  [(ngModel)]="bike.imgUrl"
+  #imgUrl="ngModel">
+
+  <input type="submit" name="submit" value="Submit" [disabled]="formData.invalid">
+</form>
